@@ -1,1 +1,1 @@
-# DingOS
+OS
