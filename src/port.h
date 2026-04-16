@@ -20,7 +20,7 @@ void outb(uint16_t port, uint8_t value);
 
 //Read port
 //port: RANGE 0-65535;
-uint16_t inb(uint32_t port);
+uint8_t inb(uint16_t port);
 
 #endif //PORT_H
 

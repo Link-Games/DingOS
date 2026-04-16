@@ -7,13 +7,13 @@ ifeq ($(UNAME), Linux)
     CAT = cat
     OBJCPY = objcopy
     DD = dd
-    LDFLAGS = -m elf_i386 -T linker.ld
+    LDFLAGS = -m elf_i386 -T linker.ld -nostdlib
 endif
 
 BUILDDIR := bin
 OBJDIR := obj
 
-CFLAGS = -Wall -m32 -ffreestanding -fno-pic -fno-pie
+CFLAGS = -Wall -m32 -ffreestanding -fno-pic -fno-pie -fno-stack-protector
 ASMFLAGS = -f elf32
 
 BOOTLOADER = src/bootloader.s

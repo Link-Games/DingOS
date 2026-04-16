@@ -3,17 +3,17 @@
 
 #include "types.h"
 
-void print_char(uint8_t charToPrint);
+void print_char(char chartoPrint);
 
-void printf(uint8_t strtoPrint[]);
+void printf(const char *strtoPrint);
 
 void crlf();
 
-void clearscreen();
+void clear_screen();
 
 void set_offset(uint16_t x, uint16_t y);
 
-void set_colour(uint16_t color);
+void set_colour(uint8_t color);
 
 void scroll_screen();
 
