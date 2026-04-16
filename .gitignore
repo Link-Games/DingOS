@@ -1,3 +1,7 @@
+# DingOS stuff
+bin/
+obj/
+
 # Prerequisites
 *.d
 
