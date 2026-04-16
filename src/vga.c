@@ -1,5 +1,6 @@
 #include "types.h"
 #include "cursor.h"
+#include "vga.h"
 
 #define VIDEO_ADDRESS 0xb8000
 #define NEW_LINE_HEX 0xA0
@@ -41,7 +42,7 @@ void printf(uint8_t strtoPrint[])
 void crlf()
 {
     offset[0] = 0;
-    offset[1] = ++offset[1];
+    offset[1]++;
 }
 
 void clearscreen(){
