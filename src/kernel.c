@@ -9,6 +9,7 @@ void kernel() {
     serialwritechar(COM1, 'P');
 }
 
+__attribute__((section(".text._start")))
 void _start() {
     kernel();
     for(;;) {}
