@@ -1,12 +1,14 @@
 #include "types.h"
 #include "cursor.h"
 #include "vga.h"
+#include "bool.h"
 
 #define VIDEO_ADDRESS 0xb8000
 #define NEW_LINE_HEX 0xA0
 
 uint16_t offset[] = {0,0};
 uint8_t colour = 0x0f;
+bool updatecursorPrint = true;
 
 void crlf()
 {
@@ -36,14 +38,19 @@ void print_char(char chartoPrint)
     *vmp = colour;
 
     ++offset[0];
-    set_cursor(offset[0], offset[1]);
+    if(updatecursorPrint) {
+        set_cursor(offset[0], offset[1]);
+    }
 }
 
 void printf(const char *strtoPrint)
 {
+    updatecursorPrint = false;
     for(uint16_t i = 0; strtoPrint[i] != 0; i++){
         print_char(strtoPrint[i]);
     }
+    set_cursor(offset[0], offset[1]);
+    updatecursorPrint = true;
 }
 
 void clear_screen()

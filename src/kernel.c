@@ -12,7 +12,7 @@ void kernel() {
     serialwritechar(COM1, 'P');
     set_colour(TEXT_COLOUR);
     clear_screen();
-    enable_cursor(0, 15);
+    enable_cursor(0, 1);
     printf("Dingers\n");
     printf("pingas\n\n\n");
     printf("mougger");
